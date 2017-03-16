@@ -17,6 +17,8 @@ public class UPDServidor {
             socketUDP.receive(packetUDP);
             String msgR = new String(packetUDP.getData(), "UTF-8").toUpperCase();
             System.out.println(msgR);
+            
+            socketUDP.send(packetUDP);
                         
         }catch(SocketException se){
             System.out.println(se.getCause());

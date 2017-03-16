@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class UDPClient {
 
     public static void main(String[] args) throws IOException {
-        String msg = JOptionPane.showInputDialog(null, "Passa", ":D", 1);
+        String msg = JOptionPane.showInputDialog(null, "Cliente enviando", ":D", 1);
         byte[] buff = msg.getBytes();
         DatagramSocket socketUDP;
         
@@ -22,7 +22,7 @@ public class UDPClient {
             
             socketUDP.send(packetUDP);
             String msgR = new String(packetUDP.getData(), "UTF-8").toUpperCase();
-            JOptionPane.showMessageDialog(null, msgR, ":D", 1);
+            JOptionPane.showMessageDialog(null, msgR, "Soy el cliente", 1);
             
             
             packetUDP = new DatagramPacket(buff,buff.length);
